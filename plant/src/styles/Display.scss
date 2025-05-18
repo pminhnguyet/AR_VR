@@ -1,3 +1,81 @@
+// $green: #2e7d32;
+// $lightGreen: #edf2ed;
+// $white: #ffffff;
+// $shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+// .gallery-container {
+//   background-color: $lightGreen;
+//   padding: 40px 24px;
+//   min-height: 100vh;
+// }
+
+// .gallery-title {
+//   font-size: 32px;
+//   font-weight: 600;
+//   color: $green;
+//   text-align: center;
+//   margin-bottom: 24px;
+// }
+
+// .card-grid {
+//   display: grid;
+//   grid-template-columns: repeat(4, 1fr); // LUÔN 3 cột
+//   gap: 30px;
+
+//   @media (max-width: 992px) {
+//     grid-template-columns: repeat(2, 1fr);
+//   }
+
+//   @media (max-width: 600px) {
+//     grid-template-columns: 1fr;
+//   }
+// }
+
+// .plant-card {
+//   height: 320px;
+//   background-color: $white;
+//   border-radius: 10px;
+//   box-shadow: $shadow;
+//   overflow: hidden;
+//   transition: transform 0.25s ease;
+//   cursor: pointer;
+//   display: flex;
+//   flex-direction: column;
+
+//   &:hover {
+//     transform: translateY(-4px);
+//     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+//   }
+// }
+
+// .image-wrapper {
+//   width: 100%;
+//   aspect-ratio: 16 / 9;
+//   overflow: hidden;
+
+//   img {
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//     transition: transform 0.3s ease;
+
+//     &:hover {
+//       transform: scale(1.05);
+//     }
+//   }
+// }
+
+// .plant-name {
+//   padding: 12px 16px;
+//   font-size: 18px;
+//   font-weight: 500;
+//   color: $green;
+//   text-align: left;
+// }
+
+
+
+
 $green: #2e7d32;
 $lightGreen: #edf2ed;
 $white: #ffffff;
@@ -7,67 +85,64 @@ $shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   background-color: $lightGreen;
   padding: 40px 24px;
   min-height: 100vh;
-}
 
-.gallery-title {
-  font-size: 32px;
-  font-weight: 600;
-  color: $green;
-  text-align: center;
-  margin-bottom: 24px;
-}
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); // LUÔN 3 cột
+    gap: 30px;
 
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); // LUÔN 3 cột
-  gap: 30px;
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
-  @media (max-width: 992px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width: 600px) {
-    grid-template-columns: 1fr;
-  }
-}
-
-.plant-card {
-  background-color: $white;
-  border-radius: 10px;
-  box-shadow: $shadow;
-  overflow: hidden;
-  transition: transform 0.25s ease;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-  }
-}
-
-.image-wrapper {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: scale(1.05);
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
     }
   }
-}
 
-.plant-name {
-  padding: 12px 16px;
-  font-size: 18px;
-  font-weight: 500;
-  color: $green;
-  text-align: left;
+
+  .plant-card {
+    height: 350px;
+    background-color: $white;
+    border-radius: 10px;
+    box-shadow: $shadow;
+    overflow: hidden;
+    transition: transform 0.25s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  .image-wrapper {
+    width: 100%;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+
+  .plant-name {
+    font-size: 18px;
+    font-weight: 500;
+    color: $green;
+    text-align: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 }

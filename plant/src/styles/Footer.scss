@@ -1,0 +1,99 @@
+$green1: #438637;
+
+.footer {
+    background-color: $green1;
+    color: white;
+    padding: 70px 60px 40px 50px;
+
+    .footer__content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px;
+
+        .footer__section {
+            flex: 1 1 200px;
+            &.brand {
+                h2 {
+                    font-family: Bricolage+Grotesque;
+                    font-size: 3rem;
+                    font-weight: 800;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+
+                p {
+                    margin-top: 8px;
+                    font-family: 'Raleway';
+                    font-weight: 500;
+                    font-size: 13px;
+                }
+            }
+
+
+            &.nav {
+                 //flex: 1 1 100px;
+                text-align: justify;
+
+                h4 {
+                    font-family: 'Raleway';
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+
+                ul {
+                     list-style: none;
+                      padding: 0;
+                    li {
+                          text-decoration: none !important;
+                        .link {
+                            text-decoration: none !important;
+                            color: white;
+                            font-family: 'Raleway';
+                            font-size: 14px;
+                        }
+                    }
+
+                }
+            }
+
+            &.about {
+                text-align: justify;
+                padding-right: 80px;
+
+                h4 {
+                    font-family: 'Raleway';
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+
+                p {
+                    color: white;
+                    font-family: 'Raleway';
+                    font-size: 14px;
+                }
+            }
+
+            &.contact {
+                text-align: justify;
+                  padding-right: 50px;
+                h4 {
+                    font-family: 'Raleway';
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+
+                p {
+                    color: white;
+                    font-family: 'Raleway';
+                    font-size: 14px;
+                }
+            }
+
+        }
+    }
+    .footer__section.nav {
+    flex: 0 0 160px; // chỉ định rõ chiều rộng nhỏ hơn
+}
+
+}

@@ -1,74 +1,56 @@
-/* IoTNavbar.css */
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
-
-
-
+$green1: #438637;
+$black: #0000;
 .custom-navbar {
-    background: #0a950a;
-    padding: 5px 0;
-    width: 100%;
-}
+    background-color: #ffffff;
+    padding: 20px 100px;
+    box-shadow:  0 4px 12px rgba(0, 0, 0, 0.1); 
 
-.nav-center {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
+    .navbar-wrapper {
+        display: flex;
+        justify-content: space-between;
 
-.nav-item {
-    font-size: 16px;
-    font-weight: 200;
-    font-family: 'Poppins', sans-serif;
-    color: white !important;
-    margin: 0 20px;
-    padding: 8px 16px;
-    border-radius: 6px;
-    text-decoration: none !important;
-    position: relative;
-    transition: color 0.3s ease-in-out;
-}
+        .logo {
+            .navbar-brand {
+                text-decoration: none !important;
+                font-family: Bricolage+Grotesque;
+                font-size: 40px;
+                font-weight: 800;
+                color: $green1;
+               
+            }
 
-/* Hiệu ứng gạch dưới nhẹ nhàng khi hover */
-.nav-item::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -4px;
-    width: 0;
-    height: 3px;
-    background: white;
-    transition: all 0.3s ease-in-out;
-    transform: translateX(-50%);
-}
+        }
 
-/* Hover effect */
-.nav-item:hover {
-    color: white !important;
-}
+        .nav-menu {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            padding-top:10px;
 
-.nav-item:hover::after {
-    width: 100%;
-}
+            .nav-item {
+                color: #333;
+                text-decoration: none;
+                font-family: 'Raleway', sans-serif;
+                font-size: 18px;
+                transition: color 0.3s;
+                
+                &.active,
+                &:hover {
+                    color: #2e7d32; // xanh lá đậm
+                    font-weight:bold;
+                }
+            }
+        }
 
-/* Thêm hiệu ứng cho trạng thái active */
-.nav-item.active {
-    color: white !important;
-    font-weight: bold;
-}
+        .user-icon {
+            display: flex;
+            align-items: flex-end;
 
-.nav-item.active::after {
-    width: 100%;
-}
+            .user {
+                color: $green1;
 
-/* Responsive */
-@media (max-width: 991px) {
-    .nav-center {
-        flex-direction: column;
-        text-align: center;
+            }
+        }
     }
 
-    .nav-item {
-        margin: 5px 0;
-    }
 }
