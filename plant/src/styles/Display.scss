@@ -1,148 +1,128 @@
-// $green: #2e7d32;
-// $lightGreen: #edf2ed;
-// $white: #ffffff;
-// $shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-
-// .gallery-container {
-//   background-color: $lightGreen;
-//   padding: 40px 24px;
-//   min-height: 100vh;
-// }
-
-// .gallery-title {
-//   font-size: 32px;
-//   font-weight: 600;
-//   color: $green;
-//   text-align: center;
-//   margin-bottom: 24px;
-// }
-
-// .card-grid {
-//   display: grid;
-//   grid-template-columns: repeat(4, 1fr); // LUÔN 3 cột
-//   gap: 30px;
-
-//   @media (max-width: 992px) {
-//     grid-template-columns: repeat(2, 1fr);
-//   }
-
-//   @media (max-width: 600px) {
-//     grid-template-columns: 1fr;
-//   }
-// }
-
-// .plant-card {
-//   height: 320px;
-//   background-color: $white;
-//   border-radius: 10px;
-//   box-shadow: $shadow;
-//   overflow: hidden;
-//   transition: transform 0.25s ease;
-//   cursor: pointer;
-//   display: flex;
-//   flex-direction: column;
-
-//   &:hover {
-//     transform: translateY(-4px);
-//     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-//   }
-// }
-
-// .image-wrapper {
-//   width: 100%;
-//   aspect-ratio: 16 / 9;
-//   overflow: hidden;
-
-//   img {
-//     width: 100%;
-//     height: 100%;
-//     object-fit: cover;
-//     transition: transform 0.3s ease;
-
-//     &:hover {
-//       transform: scale(1.05);
-//     }
-//   }
-// }
-
-// .plant-name {
-//   padding: 12px 16px;
-//   font-size: 18px;
-//   font-weight: 500;
-//   color: $green;
-//   text-align: left;
-// }
-
-
-
-
-$green: #2e7d32;
+$green1: #438637;
+$green2: #2e7d32;
 $lightGreen: #edf2ed;
 $white: #ffffff;
 $shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 
-.gallery-container {
-  background-color: $lightGreen;
-  padding: 40px 24px;
-  min-height: 100vh;
+.display {
+  //background-color: $lightGreen;
 
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); // LUÔN 3 cột
-    gap: 30px;
-
-    @media (max-width: 992px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media (max-width: 600px) {
-      grid-template-columns: 1fr;
-    }
-  }
-
-
-  .plant-card {
-    height: 350px;
-    background-color: $white;
-    border-radius: 10px;
-    box-shadow: $shadow;
-    overflow: hidden;
-    transition: transform 0.25s ease;
-    cursor: pointer;
+  .block_1 {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 25px 0 25px;
 
-    &:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    .filter-container {
+      display: flex;
+      align-items: center;
+
+      .filter-label {
+        font-family: 'Raleway';
+        font-size: 20px; 
+      }
+
+      .filter-select{
+        margin-left: 10px;
+      }
+
     }
-  }
 
-  .image-wrapper {
-    width: 100%;
-    aspect-ratio: 3/4;
-    overflow: hidden;
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
+  
 
-      &:hover {
-        transform: scale(1.05);
+    .search-container {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      .search-icon {
+        position: absolute;
+        color: $green1;
+        left: 15px;
+        font-size: 18px;
+      }
+
+      .search-input {
+        padding: 13px 12px 13px 45px;
+        border: 1px solid #ccc;
+        border-radius: 50px;
+        font-size: 14px;
+        font-family: 'Raleway';
+        width: 400px;
+        outline: none;
+        transition: border-color 0.3s ease;
+      }
+
+      .search-input:focus {
+        border-color: $green1;
+        box-shadow: 0 5px 5px rgb(59, 190, 237, 0.15);
       }
     }
   }
 
+  .gallery-container {
 
-  .plant-name {
-    font-size: 18px;
-    font-weight: 500;
-    color: $green;
-    text-align: center;
-    justify-content: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    padding: 40px 25px;
+    min-height: 100vh;
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); // LUÔN 3 cột
+      gap: 30px;
+
+      @media (max-width: 992px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (max-width: 600px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+    .plant-card {
+      height: 350px;
+      background-color: $white;
+      border-radius: 10px;
+      box-shadow: $shadow;
+      overflow: hidden;
+      transition: transform 0.25s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+      }
+    }
+
+    .image-wrapper {
+      width: 100%;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+
+
+    .plant-name {
+      font-size: 18px;
+      font-weight: 500;
+      color: $green2;
+      text-align: center;
+      justify-content: center;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
   }
 }
