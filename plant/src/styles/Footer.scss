@@ -5,6 +5,8 @@ $green1: #438637;
     color: white;
     padding: 70px 60px 40px 50px;
 
+    
+
     .footer__content {
         display: flex;
         flex-wrap: wrap;
@@ -13,6 +15,9 @@ $green1: #438637;
 
         .footer__section {
             flex: 1 1 200px;
+
+            
+
             &.brand {
                 h2 {
                     font-family: Bricolage+Grotesque;
@@ -32,20 +37,25 @@ $green1: #438637;
 
 
             &.nav {
-                 //flex: 1 1 100px;
+                //flex: 1 1 100px;
                 text-align: justify;
 
                 h4 {
                     font-family: 'Raleway';
                     font-size: 18px;
                     font-weight: bold;
+                    margin-top: 24px;
+                    margin-bottom: 24px;
+                    align-items: center;
                 }
 
                 ul {
-                     list-style: none;
-                      padding: 0;
+                    list-style: none;
+                    padding: 0;
+
                     li {
-                          text-decoration: none !important;
+                        text-decoration: none !important;
+
                         .link {
                             text-decoration: none !important;
                             color: white;
@@ -65,6 +75,8 @@ $green1: #438637;
                     font-family: 'Raleway';
                     font-size: 18px;
                     font-weight: bold;
+                    margin-top: 24px;
+                    margin-bottom: 24px;
                 }
 
                 p {
@@ -76,11 +88,14 @@ $green1: #438637;
 
             &.contact {
                 text-align: justify;
-                  padding-right: 50px;
+                padding-right: 50px;
+
                 h4 {
                     font-family: 'Raleway';
                     font-size: 18px;
                     font-weight: bold;
+                    margin-top: 24px;
+                    margin-bottom: 24px;
                 }
 
                 p {
@@ -92,8 +107,9 @@ $green1: #438637;
 
         }
     }
+
     .footer__section.nav {
-    flex: 0 0 160px; // chỉ định rõ chiều rộng nhỏ hơn
-}
+        flex: 0 0 160px; // chỉ định rõ chiều rộng nhỏ hơn
+    }
 
 }

@@ -20,6 +20,7 @@ function Footer() {
                             <li><Link to="/display" className="link">Sản phẩm</Link></li>
                             <li><Link to="/lienhe" className="link">Liên hệ</Link></li>
                         </ul>
+                       
                     </div>
 
                     <div className="footer__section about">
