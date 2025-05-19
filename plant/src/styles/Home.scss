@@ -8,6 +8,7 @@ $yellow1: #FFBF00;
 
 
     .block_1 {
+
         background: url('../assets/images/block1.png');
         background-size: cover; // Ảnh phủ hết khung
         background-position: center; // Căn giữa ảnh
@@ -21,8 +22,6 @@ $yellow1: #FFBF00;
 
         .content {
             width: 100%;
-            //max-width: 1200px;
-
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -85,10 +84,12 @@ $yellow1: #FFBF00;
                         background-color: $yellow1;
                         transform: translateY(10px);
                     }
-                    .link{
+
+                    .link {
                         text-decoration: none;
                         color: white;
                     }
+
                     .blinking {
                         animation: blinkText 1s infinite;
                     }
@@ -303,6 +304,11 @@ $yellow1: #FFBF00;
 
     .block_4 {
         height: 100vh;
+         background: url('../assets/images/ellipse.png');
+         
+        background-size: cover;
+        background-position: center;
+        background-repeat: repeat;
 
         .title_wrapper {
             padding-top: 80px;

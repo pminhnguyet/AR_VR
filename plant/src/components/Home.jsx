@@ -15,7 +15,7 @@ import block3_to from "../assets/images/block3_to.png";
 import block3_nho from "../assets/images/block3_nho.png";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { IoTime } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // function Model({ url }) {
 //     const { scene } = useGLTF(url);
 
@@ -149,7 +149,11 @@ function Home() {
     }
 
     console.log("Latest:", latests);
+    const navigate = useNavigate();
 
+    const handleClickProduct = (id) => {
+        navigate(`/detail/${id}`);
+    };
 
     if (loading) {
         return <div >Đang tải mô hình...</div>;
@@ -253,9 +257,8 @@ function Home() {
                         <button className="nav left" onClick={handlePrevProducts}><GrPrevious /></button>
                         <div className="product-cards">
                             {Products.map((product, idx) => (
-                                <div key={idx} className="product-card">
+                                <div key={idx} className="product-card" onClick = {() => handleClickProduct(product.id)}>
                                     <div className="image-wrapper">  <img src={product.image} alt={product.title}></img></div>
-
                                     <p>{product.title}</p>
                                 </div>
                             ))}
