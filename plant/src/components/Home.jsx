@@ -109,7 +109,7 @@ function Home() {
 
 
     useEffect(() => {
-        fetch("http://localhost:8080/api/plant/6")
+        fetch("http://localhost:8080/api/plant/5")
             .then((res) => res.json())
             .then((data) => {
                 console.log("Fetch data:", data);

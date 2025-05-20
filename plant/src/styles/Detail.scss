@@ -1,132 +1,140 @@
 $green1: #438637;
-$green2: #2A7D1B;
+$green2: #2a7d1b;
 $green3: #208e25;
-$yellow1: #FFBF00;
+$yellow1: #ffbf00;
 
 .detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 30px;
+
+  .model-container {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 40px 30px;
+    gap: 30px;
+    width: 100%;
+    height: 80vh;
 
-
-    .model-container {
-        display: flex;
-        gap: 30px;
-        width: 100%;
-        height: 80vh;
-
-        .model-display {
-            flex: 3;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-
-        }
-
-        .model-info {
-            flex: 2;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-
-
-            .tab-buttons {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 30px;
-                padding: 10px 20px;
-
-
-                .tab-button {
-                    // padding: 10px 50px;
-                    width: 100%;
-                    padding-top: 12px;
-                    padding-bottom: 12px;
-                    border-radius: 50px;
-                    border: 1px solid $green1;
-                    box-shadow: 0 5px 5px rgb(59, 190, 237, 0.15);
-                    font-family: 'Raleway';
-                    font-weight: 600;
-                    font-size: 15px;
-                    color: $green1;
-                    background-color: #ffffff;
-
-                    &:hover {
-                        background-color: #208e25;
-                        color: white;
-                    }
-
-
-                }
-
-                .tab-button.active {
-                    background-color: $green3;
-                    color: white;
-                }
-
-            }
-
-            .tab-content {
-                padding: 0px 20px;
-
-
-                .text-information {
-                    overflow-y: auto;
-                    max-height: 400px;
-
-
-
-                    h2 {
-                        font-family: 'Raleway';
-                        font-size: 1.5rem;
-                        color: $green1;
-                    }
-
-                    p {
-                        font-family: 'Raleway';
-                        text-align: justify;
-                        line-height: 1.5;
-                    }
-                }
-
-                .AR-area {
-                    margin-top: 30px;
-
-                    .AR_button {
-                        font-family: 'Raleway';
-                        font-size: 1rem;
-                        font-weight: 600;
-                        color: white;
-                        background-color: $green3;
-                        padding: 15px 50px;
-                        border-radius: 100px;
-                        border: none;
-                        box-shadow: 0 5px 5px rgb(59, 190, 237, 0.15);
-
-                        &:hover {
-                            background-color: $yellow1;
-                        }
-                    }
-
-
-                }
-
-            }
-        }
-
-
-
+    .model-display {
+      flex: 3;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
     }
+
+    .model-info {
+      flex: 2;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+      .tab-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        padding: 10px 20px;
+
+        .tab-button {
+          // padding: 10px 50px;
+          width: 100%;
+          padding-top: 12px;
+          padding-bottom: 12px;
+          border-radius: 50px;
+          border: 1px solid $green1;
+          box-shadow: 0 5px 5px rgb(59, 190, 237, 0.15);
+          font-family: "Raleway";
+          font-weight: 600;
+          font-size: 15px;
+          color: $green1;
+          background-color: #ffffff;
+
+          &:hover {
+            background-color: #208e25;
+            color: white;
+          }
+        }
+
+        .tab-button.active {
+          background-color: $green3;
+          color: white;
+        }
+      }
+
+      .tab-content {
+        padding: 0px 20px;
+
+        .text-information {
+          overflow-y: auto;
+          max-height: 400px;
+
+          h2 {
+            font-family: "Raleway";
+            font-size: 1.5rem;
+            color: $green1;
+          }
+
+          p {
+            font-family: "Raleway";
+            text-align: justify;
+            line-height: 1.5;
+          }
+        }
+
+        .AR-area {
+          margin-top: 30px;
+
+          .AR_button {
+            font-family: "Raleway";
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            background-color: $green3;
+            padding: 15px 50px;
+            border-radius: 100px;
+            border: none;
+            box-shadow: 0 5px 5px rgb(59, 190, 237, 0.15);
+
+            &:hover {
+              background-color: $yellow1;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
+.qr-popup {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 
+  .content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    width: fit-content;
+    border-radius: 8px;
+    position: relative;
+    text-align: center;
+  }
 
-
-
+  .close {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 28px;
+    cursor: pointer;
+  }
+}
 
 // .model-info h2 {
 //     font-size: 24px;

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import "../styles/Detail.scss";
+import QRPopup from "./QRPopup";
 
 // Component tải mô hình GLB
 function Model({ url }) {
@@ -20,7 +21,9 @@ function Detail() {
     fetch("http://localhost:8080/api/plant")
       .then((res) => res.json())
       .then((data) => {
-        const modelDetail = data.content.find((item) => item.id === parseInt(id));
+        const modelDetail = data.content.find(
+          (item) => item.id === parseInt(id)
+        );
         setModel(modelDetail);
         setLoading(false);
       })
@@ -47,7 +50,11 @@ function Detail() {
             <ambientLight intensity={2} />
             <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
             <Model url={model.model3D} />
-            <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
+            <OrbitControls
+              enablePan={true}
+              enableZoom={true}
+              enableRotate={true}
+            />
           </Canvas>
         </div>
 
@@ -56,13 +63,15 @@ function Detail() {
           <div className="tab-buttons">
             <button
               className={`tab-button ${selectedTab === "info" ? "active" : ""}`}
-              onClick={() => setSelectedTab("info")}>
+              onClick={() => setSelectedTab("info")}
+            >
               Thông tin
             </button>
 
             <button
               className={`tab-button ${selectedTab === "chat" ? "active" : ""}`}
-              onClick={() => setSelectedTab("chat")}>
+              onClick={() => setSelectedTab("chat")}
+            >
               Chat AI
             </button>
           </div>
@@ -72,29 +81,21 @@ function Detail() {
               <div className="information">
                 <div className="text-information">
                   <h2>{model.title}</h2>
-                  {model.description.split('\n').map((line, index) => (
+                  {model.description.split("\n").map((line, index) => (
                     <p key={index}>{line}</p>
                   ))}
                   <p>Giá hiện tại: {model.price}VNĐ</p>
                   <p>Kho: {model.quantity} cây</p>
                 </div>
-                <div className="AR-area">
-                  <button className="AR_button">Trải nghiệm AR</button>
-                </div>
-
+                <QRPopup model={model} />
               </div>
-
             )}
             {selectedTab === "chat" && (
               <div className="chat-box">
                 <p>Chat với AI về cây này (chức năng đang phát triển).</p>
               </div>
             )}
-
-
           </div>
-
-
         </div>
       </div>
     </div>
