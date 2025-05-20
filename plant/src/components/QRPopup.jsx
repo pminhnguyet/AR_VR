@@ -15,6 +15,7 @@ function QRPopup({ model }) {
       {showPopup && (
         <div onClick={() => setShowPopup(false)} className="popup-overlay">
           <div className="popup-content">
+            <h2 className='title'>Quét QR bằng điện thoại để trình diễn AR</h2>
             <QRCode value={qrValue} size={500} />
           </div>
         </div>
