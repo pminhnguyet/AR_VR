@@ -1,0 +1,84 @@
+$green1: #438637;
+$green3: #208e25;
+$yellow1: #FFBF00;
+
+
+.create-plant-container {
+    // max-width: 600px;
+    margin: 30px auto;
+    padding: 0px 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-family: "Raleway";
+
+    h2 {
+        color: $green3;
+        font-weight: bold;
+        font-size: 2.5rem;
+    }
+
+    label {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    input,
+    textarea,
+    select {
+        padding: 8px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-family: "Raleway";
+        outline: none;
+    }
+
+    input:focus,
+    textarea:focus {
+        border-color: $green1;
+        box-shadow: 0 5px 5px rgb(59, 190, 237, 0.15);
+    }
+
+    p{
+        margin: 0 0 5px 0;
+        font-style: italic;
+        font-size: 13px;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+
+        button {
+            padding: 10px 20px;
+
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: "Raleway";
+        }
+
+        .save-btn {
+            background-color: $green3;
+            color: white;
+
+            &:hover {
+                transform: scale(1.2);
+                font-weight: bold;
+            }
+        }
+
+        .cancel-btn {
+            background-color: white;
+            border: 1px solid $green3;
+            color: $green3;
+
+            &:hover {
+                background-color: $green3;
+                color: white;
+            }
+        }
+    }
+}

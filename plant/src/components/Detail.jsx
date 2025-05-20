@@ -75,6 +75,8 @@ function Detail() {
                   {model.description.split('\n').map((line, index) => (
                     <p key={index}>{line}</p>
                   ))}
+                  <p>Giá hiện tại: {model.price}VNĐ</p>
+                  <p>Kho: {model.quantity} cây</p>
                 </div>
                 <div className="AR-area">
                   <button className="AR_button">Trải nghiệm AR</button>
