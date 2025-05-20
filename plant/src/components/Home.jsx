@@ -155,6 +155,14 @@ function Home() {
         navigate(`/detail/${id}`);
     };
 
+
+
+    const handleClickCategory = (categoryName) => {
+        navigate(`/display?category=${encodeURIComponent(categoryName)}`);
+    };
+
+
+
     if (loading) {
         return <div >Đang tải mô hình...</div>;
     }
@@ -219,8 +227,15 @@ function Home() {
                     <div className="slider">
                         <button className="nav left" onClick={handlePrev}><GrPrevious /></button>
                         <div className="plant-cards">
-                            {visiblePlants.map((plant, idx) => (
+                            {/* {visiblePlants.map((plant, idx) => (
                                 <div key={idx} className="plant-card">
+                                    <h3>{plant.name}</h3>
+                                    <img src={plant.image} alt={plant.name} />
+                                    <p>{plant.description}</p>
+                                </div>
+                            ))} */}
+                            {visiblePlants.map((plant, idx) => (
+                                <div key={idx} className="plant-card" onClick={() => handleClickCategory(plant.name)}>
                                     <h3>{plant.name}</h3>
                                     <img src={plant.image} alt={plant.name} />
                                     <p>{plant.description}</p>
@@ -257,7 +272,7 @@ function Home() {
                         <button className="nav left" onClick={handlePrevProducts}><GrPrevious /></button>
                         <div className="product-cards">
                             {Products.map((product, idx) => (
-                                <div key={idx} className="product-card" onClick = {() => handleClickProduct(product.id)}>
+                                <div key={idx} className="product-card" onClick={() => handleClickProduct(product.id)}>
                                     <div className="image-wrapper">  <img src={product.image} alt={product.title}></img></div>
                                     <p>{product.title}</p>
                                 </div>

@@ -2,14 +2,25 @@ import React, { useState, useEffect } from "react";
 import "../styles/Display.scss";
 import { useNavigate } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
+import { useLocation } from "react-router-dom";
 import Select from 'react-select';
 
 function Display() {
     const [models, setModels] = useState([]);
     const [filteredModels, setFilteredModels] = useState([]);
-    const [selectedCategory, setSelectedCategory] = useState("Tất cả");
+    // const [selectedCategory, setSelectedCategory] = useState("Tất cả");
     const [searchQuery, setSearchQuery] = useState("");
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 8;
     const navigate = useNavigate();
+
+
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const categoryFromURL = queryParams.get("category") || "Tất cả";
+
+    const [selectedCategory, setSelectedCategory] = useState(categoryFromURL);
+
 
     useEffect(() => {
         fetch("http://localhost:8080/api/plant")
@@ -46,6 +57,12 @@ function Display() {
     }, [selectedCategory, searchQuery, models]);
 
 
+    // Pagination calculations
+    const totalPages = Math.ceil(filteredModels.length / itemsPerPage);
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const currentItems = filteredModels.slice(startIndex, startIndex + itemsPerPage);
+
+
     const categoryOptions = [
         { value: 'Tất cả', label: 'Tất cả' },
         { value: 'Kim', label: 'Kim' },
@@ -72,7 +89,7 @@ function Display() {
             ...provided,
             borderColor: '#438637',
             boxShadow: 'none',
-             fontFamily: 'Raleway',
+            fontFamily: 'Raleway',
             '&:hover': { borderColor: '#109001' }
         }),
 
@@ -115,7 +132,8 @@ function Display() {
 
                 <div className="gallery-container">
                     <div className="card-grid">
-                        {Array.isArray(filteredModels) && filteredModels.map((model) => (
+                        {/* {Array.isArray(filteredModels) && filteredModels.map((model) => ( */}
+                        {Array.isArray(currentItems) && currentItems.map((model) => (
                             <div
                                 key={model.id}
                                 className="plant-card"
@@ -132,6 +150,25 @@ function Display() {
                             </div>
                         ))}
                     </div>
+                </div>
+
+
+
+                {/* Pagination */}
+                <div className="pagination">
+                    <button
+                        onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                        disabled={currentPage === 1}
+                    >
+                        &lt;
+                    </button>
+                    <span>{currentPage} / {totalPages}</span>
+                    <button
+                        onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                        disabled={currentPage === totalPages}
+                    >
+                        &gt;
+                    </button>
                 </div>
             </div>
 

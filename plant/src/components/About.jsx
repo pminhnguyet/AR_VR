@@ -61,7 +61,7 @@ function About() {
                 <div className="block_4">
                     <div className="email">
                         <div className="email-icon">
-                            <HiOutlineMailOpen size={80}/>
+                            <HiOutlineMailOpen size={80} />
                         </div>
                         <p className="title">Email</p>
                         <p className="subtitle">support@greensoul.vn</p>
@@ -71,7 +71,7 @@ function About() {
                         </div>
                     </div>
                     <div className="hotline">
-                        <div className="hotline-icon"><FaHeadset size={80}/></div>
+                        <div className="hotline-icon"><FaHeadset size={80} /></div>
                         <p className="title">Hỗ trợ</p>
                         <p className="subtitle">0901 234 567</p>
                         <div className="description">

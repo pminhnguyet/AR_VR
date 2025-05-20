@@ -184,7 +184,12 @@ function EditPlant() {
 
                 <label>Model 3D (.usdz)</label>
                 <input type="file" onChange={(e) => handleFileChange(e, 'usdz')} />
-                {formData.usdz && <a href={formData.usdz} target="_blank" rel="noreferrer">Xem USDZ</a>}
+                {/* {formData.usdz && <a href={formData.usdz} target="_blank" rel="noreferrer">Xem USDZ</a>} */}
+                {formData.usdz && (
+                    <a href={formData.usdz} target="_blank" rel="noreferrer">
+                        {formData.usdz}
+                    </a>
+                )}
 
                 <label>Hình ảnh</label>
                 <input type="file" onChange={(e) => handleFileChange(e, 'image')} />
