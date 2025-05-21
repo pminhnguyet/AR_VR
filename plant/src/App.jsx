@@ -11,6 +11,8 @@ import Home from './components/Home'
 import Footer from './components/Footer'
 import CreatePlant from './components/CreatePlant'
 import EditPlant from './components/EditPlant'
+import Room from './components/Room'
+import Rooms from './components/Rooms'
 
 function App() {
   const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(false)
@@ -26,6 +28,8 @@ function App() {
           <Route path="/admin" element={<Admin isAdminLoggedIn={isAdminLoggedIn} setIsAdminLoggedIn={setIsAdminLoggedIn} />}></Route>
           <Route path="/admin/create" element={<CreatePlant/>} />
           <Route path="/admin/edit/:id" element={<EditPlant/>} />
+            <Route path="/rooms" element={<Rooms/>} />
+           <Route path="/room/:id" element={<Room/>} />
           <Route path="detail/:id" element={<Detail />}></Route>
         </Routes>
         <Footer />

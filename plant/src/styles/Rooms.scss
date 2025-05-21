@@ -1,0 +1,144 @@
+// $green1: #438637;
+// $green2: #2A7D1B;
+// $green3: #208e25;
+// $yellow1: #FFBF00;
+
+// .rooms-container {
+//     display: grid;
+//     grid-template-columns: repeat(2, 1fr); // 2 cột
+//     gap: 2rem;
+//     padding: 2rem;
+//     justify-items: center;
+//     font-family: 'Raleway';
+
+//     .room-card {
+//         width: 90%;
+//         //  max-width: 400px;
+//         border-radius: 10px;
+//         overflow: hidden;
+//         text-decoration: none;
+//         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+//         transition: transform 0.3s ease;
+//         background-color: $green3;
+
+//         &:hover {
+//             transform: scale(1.03);
+//         }
+
+//         img {
+//             width: 100%;
+//             height: auto;
+//             display: block;
+//         }
+
+//         h3 {
+//             background-color: $green3;
+//             color: white;
+//             margin: 0;
+//             padding: 1rem;
+//             font-size: 1.2rem;
+//             text-align: center;
+//             font-family: 'Raleway';
+//             font-weight: 500;
+//         }
+//     }
+// }
+
+
+
+
+$green1: #438637;
+$green2: #2A7D1B;
+$green3: #208e25;
+$yellow1: #FFBF00;
+
+.rooms-wrapper {
+    //max-width: 1200px;
+    //margin: 0 auto;
+    //padding: 2rem;
+    font-family: 'Raleway', sans-serif;
+    color: $green3;
+
+    .rooms-intro {
+        margin-bottom: 2.5rem;
+        height: 90vh;
+        background: url('../assets/images/ellipse.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: repeat;
+        display: flex;
+        align-items: center;
+
+        .content {
+            padding: 0 320px;
+
+            h2 {
+                font-size: 2.8rem;
+                font-weight: 700;
+                margin: 0 0 50px 0;
+                color: $green3;
+            }
+
+            p {
+                font-size: 1.2rem;
+                line-height: 1.6;
+                margin-bottom: 1rem;
+
+                strong {
+                    color: $yellow1;
+                }
+
+                em {
+                    font-style: italic;
+                    font-weight: 600;
+                }
+            }
+        }
+
+
+    }
+
+
+
+    .rooms-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); // 2 cột
+        gap: 50px;
+        padding: 0 10rem;
+        justify-items: center;
+        font-family: 'Raleway';
+        margin-bottom: 4rem;
+
+        .room-card {
+            width: 90%;
+            //  max-width: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+            background-color: $green3;
+
+            &:hover {
+                transform: scale(1.03);
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            h3 {
+                background-color: $green3;
+                color: white;
+                margin: 0;
+                padding: 1rem;
+                font-size: 1.2rem;
+                text-align: center;
+                font-family: 'Raleway';
+                font-weight: 500;
+            }
+        }
+    }
+}

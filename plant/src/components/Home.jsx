@@ -254,7 +254,7 @@ function Home() {
                             <p>Góc xanh nhỏ bé ấy trao gửi nguồn năng lượng trong lành, giúp tâm hồn thư thái và gợi mở ra những cảm hứng lớn.</p>
                             <p>Đó không chỉ là trang trí – mà là cách bạn nuôi dưỡng cảm xúc tích cực mỗi ngày.</p>
                         </div>
-                        <button className="experience-btn">
+                        <button className="experience-btn" onClick={() => navigate("/room")}>
                             Trải nghiệm 360°→
                         </button>
                     </div>

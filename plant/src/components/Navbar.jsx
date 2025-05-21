@@ -34,7 +34,7 @@ function NavbarComponent({ isAdminLoggedIn, setIsAdminLoggedIn }) {
                             <NavLink to="/" className="nav-item">Trang chủ</NavLink>
                             <NavLink to="/gioithieu" className="nav-item">Giới thiệu</NavLink>
                             <NavLink to="/display" className="nav-item">Sản phẩm</NavLink>
-                            <NavLink to="/360" className="nav-item">Trải nghiệm 360</NavLink>
+                            <NavLink to="/rooms" className="nav-item">Trải nghiệm 360</NavLink>
                         </div>
                         <div className="user-icon" onClick={() => {
                             if (isAdminLoggedIn) {

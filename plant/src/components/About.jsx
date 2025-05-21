@@ -4,17 +4,108 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { IoTime } from "react-icons/io5";
 import { HiOutlineMailOpen } from "react-icons/hi";
 import { FaHeadset } from "react-icons/fa";
+import { OrbitControls, useGLTF } from "@react-three/drei";
+import { useFrame, Canvas } from "@react-three/fiber";
+import { useState, useEffect } from "react";
+import { motion } from 'framer-motion';
+
+
+function Model({ url }) {
+    const { scene } = useGLTF(url);
+
+    useFrame(() => {
+        scene.rotation.y += 0.01;
+    });
+
+    return (
+        <primitive
+
+            object={scene}
+            scale={30}
+            position={[0, -25, 0]}
+
+        />
+    );
+}
 
 function About() {
+    const [model, setModel] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        fetch("http://localhost:8080/api/plant/2")
+            .then((res) => res.json())
+            .then((data) => {
+                console.log("Fetch data:", data);
+                setModel(data);
+                setLoading(false);
+            })
+            .catch((error) => {
+                console.error("Lỗi khi fetch model:", error);
+                setLoading(false);
+            });
+
+    }, []);
+    if (loading) {
+        return <div >Đang tải mô hình...</div>;
+    }
+
+    if (!model) {
+        return <div>Không tìm thấy mô hình.</div>;
+    }
+
+
     return (
         <>
             <div className="about">
                 <div className="block_1">
-                    <div className="content">
+                    {/* <div className="content">
                         <h1>Chúng tôi là GreenSoul</h1>
                         <p>Chúng tôi tin rằng mỗi chậu cây nhỏ có thể mang lại một nguồn cảm hứng lớn.</p>
                         <p>GreenSoul không chỉ bán cây – chúng tôi mang đến một cách sống: nhẹ nhàng, xanh mát và đầy năng lượng tích cực.</p>
-                    </div>
+                    </div> */}
+                    <motion.div
+                        className="content"
+                        initial="hidden"
+                        animate="visible"
+                        variants={{
+                            visible: {
+                                transition: {
+                                    staggerChildren: 0.5, // mỗi phần tử con hiện sau 0.5s
+                                },
+                            },
+                        }}
+                    >
+                        <motion.h1
+                            variants={{
+                                hidden: { opacity: 0, y: 30 },
+                                visible: { opacity: 1, y: 0 },
+                            }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            Chúng tôi là GreenSoul
+                        </motion.h1>
+
+                        <motion.p
+                            variants={{
+                                hidden: { opacity: 0, y: 30 },
+                                visible: { opacity: 1, y: 0 },
+                            }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            Chúng tôi tin rằng mỗi chậu cây nhỏ có thể mang lại một nguồn cảm hứng lớn.
+                        </motion.p>
+
+                        <motion.p
+                            variants={{
+                                hidden: { opacity: 0, y: 30 },
+                                visible: { opacity: 1, y: 0 },
+                            }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            GreenSoul không chỉ bán cây – chúng tôi mang đến một cách sống: nhẹ nhàng, xanh mát và đầy năng lượng tích cực.
+                        </motion.p>
+                    </motion.div>
                 </div>
 
                 <div className="block_2">
@@ -26,7 +117,12 @@ function About() {
                         </div>
                     </div>
                     <div className="images">
-                        <img src={block2Img} />
+                        {/* <img src={block2Img} /> */}
+                        <Canvas camera={{ position: [0, 10, 80], fov: 45 }}>
+                            <ambientLight intensity={3} />
+                            <Model url={model.model3D} />
+                            <OrbitControls maxDistance={200} />
+                        </Canvas>
                     </div>
                 </div>
 

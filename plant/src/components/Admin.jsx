@@ -38,16 +38,27 @@ function Admin({ isAdminLoggedIn, setIsAdminLoggedIn }) {
     }, []);
 
 
+    // const handleSort = (selectedOption) => {
+    //     const field = selectedOption.value;
+
+    //     if (sortField === field) {
+    //         setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+    //     } else {
+    //         setSortField(field);
+    //         setSortOrder('asc');
+    //     }
+    // };
     const handleSort = (selectedOption) => {
-        const field = selectedOption.value;
+        const field = typeof selectedOption === 'string' ? selectedOption : selectedOption.value;
 
         if (sortField === field) {
-            setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+            setSortOrder(prev => prev === 'asc' ? 'desc' : 'asc');
         } else {
             setSortField(field);
             setSortOrder('asc');
         }
     };
+
 
     const handleFilterChange = (selectedOption) => {
         setFilter(selectedOption.value);
@@ -214,7 +225,8 @@ function Admin({ isAdminLoggedIn, setIsAdminLoggedIn }) {
                         <th onClick={() => handleSort('id')}>
                             <div className="table-title">
                                 ID
-                                <div>{sortField === 'id' && (sortOrder === 'asc' ? '↑' : '↓')}</div>
+                                {/* <div>{sortField === 'id' && (sortOrder === 'asc' ? '↑' : '↓')}</div> */}
+                                <div>{sortField === "id" ? (sortOrder === "asc" ? "↑" : "↓") : ""}</div>
                             </div>
                         </th>
                         <th onClick={() => handleSort('title')}>

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import "../styles/Detail.scss";
+import QRPopup from "./QRPopup";
 
 // Component tải mô hình GLB
 function Model({ url }) {
@@ -78,9 +79,10 @@ function Detail() {
                   <p>Giá hiện tại: {model.price}VNĐ</p>
                   <p>Kho: {model.quantity} cây</p>
                 </div>
-                <div className="AR-area">
+                <QRPopup model={model} />
+                {/* <div className="AR-area">
                   <button className="AR_button">Trải nghiệm AR</button>
-                </div>
+                </div> */}
 
               </div>
 
